@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>项目档案｜线上货运代理全流程自动化</title>
+  <meta name="description" content="线上货运代理全流程自动化项目档案：背景、方案、12 步流程、成果与局限。脱敏展示版。">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var query = params.get("lang");
+        var saved = localStorage.getItem("resume.lang");
+        var lang = query === "en" || query === "zh" ? query : saved === "en" ? "en" : "zh";
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
+      } catch (error) {
+        /* keep the default Chinese */
+      }
+    })();
+  </script>
+</head>
+<body
+  data-title-zh="项目档案｜线上货运代理全流程自动化"
+  data-title-en="Project Dossier | End-to-end Freight-Forwarding Automation"
+  data-desc-zh="线上货运代理全流程自动化项目档案：背景、方案、12 步流程、成果与局限。脱敏展示版。"
+  data-desc-en="Project dossier for an end-to-end freight-forwarding automation: context, approach, 12-step flow, results, and limits. Sanitized showcase."
+>
+  <a class="skip-link" href="#main"><span class="lang-zh">跳到主要内容</span><span class="lang-en">Skip to content</span></a>
+  <span id="lang-status" class="visually-hidden" aria-live="polite"></span>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html" aria-label="Back to resume">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>DOSSIER <span class="brand-year">/ PROJECT</span></span>
+      </a>
+      <nav class="site-nav" aria-label="页面导航">
+        <a href="../index.html#about"><span class="lang-zh">关于</span><span class="lang-en">About</span></a>
+        <a href="../index.html#project"><span class="lang-zh">项目</span><span class="lang-en">Project</span></a>
+        <a href="../index.html#skills"><span class="lang-zh">能力</span><span class="lang-en">Capabilities</span></a>
+        <a href="../index.html#contact"><span class="lang-zh">联系</span><span class="lang-en">Contact</span></a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="语言切换 / Language">
+          <button type="button" data-lang-btn="zh" aria-pressed="true">中</button>
+          <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="print-button" type="button" data-print>
+          <span class="lang-zh">打印 / PDF</span><span class="lang-en">Print / PDF</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero wrap" aria-labelledby="project-name">
+      <p class="doc-label">
+        <span class="lang-zh">项目档案 / 2026</span><span class="lang-en">Project dossier / 2026</span>
+      </p>
+      <h1 id="project-name">
+        <span class="lang-zh">线上货运代理<br>全流程自动化</span>
+        <span class="lang-en">End-to-end freight-forwarding automation</span>
+      </h1>
+      <p class="page-lede">
+        <span class="lang-zh">把跨机构、强单据依赖的货运代理流程封装成可重复执行的命令行工具：接管已登录浏览器，按单据元数据组装提交内容，依据操作日志跳过已完成步骤。</span>
+        <span class="lang-en">A repeatable CLI for a document-heavy, multi-institution freight-forwarding workflow: attach to a logged-in browser, assemble submissions from document metadata, and skip completed steps using the operation log.</span>
+      </p>
+      <div class="page-meta">
+        <span><span class="lang-zh">类型</span><span class="lang-en">Type</span><strong><span class="lang-zh">个人项目</span><span class="lang-en">Personal project</span></strong></span>
+        <span><span class="lang-zh">时间</span><span class="lang-en">Period</span><strong>2026</strong></span>
+        <span><span class="lang-zh">技术</span><span class="lang-en">Stack</span><strong>Python, Playwright, Claude Code</strong></span>
+        <span><span class="lang-zh">运行边界</span><span class="lang-en">Runtime</span><strong><span class="lang-zh">无 LLM / OCR</span><span class="lang-en">No LLM / OCR</span></strong></span>
+      </div>
+      <a class="back-link" href="../index.html"><span class="lang-zh">返回简历</span><span class="lang-en">Back to resume</span></a>
+    </section>
+
+    <div class="wrap project-layout">
+      <nav class="toc" aria-label="本页目录">
+        <a href="#context"><span class="lang-zh">背景</span><span class="lang-en">Context</span></a>
+        <a href="#problem"><span class="lang-zh">问题</span><span class="lang-en">Problem</span></a>
+        <a href="#approach"><span class="lang-zh">方案</span><span class="lang-en">Approach</span></a>
+        <a href="#flow"><span class="lang-zh">流程</span><span class="lang-en">Flow</span></a>
+        <a href="#results"><span class="lang-zh">结果</span><span class="lang-en">Results</span></a>
+        <a href="#limits"><span class="lang-zh">局限</span><span class="lang-en">Limits</span></a>
+        <a href="#reflection"><span class="lang-zh">反思</span><span class="lang-en">Reflection</span></a>
+        <a href="#files"><span class="lang-zh">文件</span><span class="lang-en">Files</span></a>
+      </nav>
+
+      <div class="project-content">
+        <section id="context">
+          <h2><span class="lang-zh">背景</span><span class="lang-en">Context</span></h2>
+          <p>
+            <span class="lang-zh">这个项目面向 SimForwarder 货运代理实训系统。一笔出口海运 CY 直单需要依次经过发货人、船公司、检验检疫、海关和集装箱堆场，单据类型多、依赖强、顺序严格。</span>
+            <span class="lang-en">The project targets SimForwarder, a freight-forwarding training system. A single export sea-freight CY direct case moves through a sender, carrier, inspection and quarantine, customs, and a container yard—with many document types, strong dependencies, and a strict order.</span>
+          </p>
+        </section>
+
+        <section id="problem">
+          <h2><span class="lang-zh">问题</span><span class="lang-en">Problem</span></h2>
+          <ul class="lang-zh">
+            <li>单据类型多，不同步骤依赖不同单据组合。</li>
+            <li>跨机构顺序严格；漏单或提前操作会产生失败记录。</li>
+            <li>重复点击和反馈分散，难以确认某一步是否真的完成。</li>
+            <li>单据内容仍需人工填写，自动化必须明确边界。</li>
+          </ul>
+          <ul class="lang-en">
+            <li>Many document types; each step depends on a different combination.</li>
+            <li>A strict cross-institution order; missing documents or premature actions create failure records.</li>
+            <li>Repeated clicks and scattered feedback make it hard to confirm whether a step is really complete.</li>
+            <li>Documents still need manual entry, so the automation must respect a clear boundary.</li>
+          </ul>
+        </section>
+
+        <section id="approach">
+          <h2><span class="lang-zh">方案</span><span class="lang-en">Approach</span></h2>
+          <ul class="lang-zh">
+            <li><strong>接管已登录浏览器：</strong>通过 Playwright 的 CDP 连接已手动登录的 Edge，不保存账号密码。</li>
+            <li><strong>文档元数据驱动：</strong>按 TypeName 与 InternalId 建立单据索引，按步骤需要的类型组装 docList；缺少单据时给出明确提示。</li>
+            <li><strong>CLI 封装：</strong>check、docs、scenes、do、step、log、status，把 12 步出口流程变成可重复执行的命令。</li>
+            <li><strong>幂等与核验：</strong>执行前读取操作日志，已完成步骤自动跳过；dry-run 只预览不提交。</li>
+            <li><strong>人工与自动化边界：</strong>程序只提交机构操作，不修改页面上的单据内容。</li>
+          </ul>
+          <ul class="lang-en">
+            <li><strong>Attach to a logged-in browser:</strong> Playwright connects to a manually logged-in Edge over CDP; no credentials are stored.</li>
+            <li><strong>Metadata-driven documents:</strong> index documents by TypeName and InternalId, assemble the docList from the types each step needs, and fail with a clear message when something is missing.</li>
+            <li><strong>CLI wrapper:</strong> check, docs, scenes, do, step, log, and status turn the 12-step export flow into repeatable commands.</li>
+            <li><strong>Idempotency and verification:</strong> read the operation log before acting, skip completed steps, and use dry-run to preview without submitting.</li>
+            <li><strong>Human / automation boundary:</strong> the program submits institution operations only; it never edits document content in the page.</li>
+          </ul>
+          <div class="callout">
+            <strong><span class="lang-zh">开发工具 vs 运行时</span><span class="lang-en">Development tools vs runtime</span></strong>
+            <span class="lang-zh">Claude Code 与 Playwright MCP 用于开发；运行时是确定性的 Python + 浏览器自动化，不依赖 LLM 或 OCR。</span>
+            <span class="lang-en">Claude Code and Playwright MCP were development tools; the runtime is deterministic Python + browser automation, with no LLM or OCR.</span>
+          </div>
+        </section>
+
+        <section id="flow">
+          <h2><span class="lang-zh">流程</span><span class="lang-en">Flow</span></h2>
+          <figure class="figure">
+            <img src="flow.svg" alt="流程图：单据 → 结构化 → 执行 → 核验。Workflow diagram: documents → structure → execute → verify.">
+            <figcaption>
+              <span class="lang-zh">单据流转与人工/自动化边界。</span>
+              <span class="lang-en">Document flow and the human / automation boundary.</span>
+            </figcaption>
+          </figure>
+          <p class="figure-hint">
+            <span class="lang-zh">左右滑动查看完整流程图</span>
+            <span class="lang-en">Scroll horizontally to see the full diagram</span>
+          </p>
+
+          <h3><span class="lang-zh">出口海运 CY 直单：12 步</span><span class="lang-en">Export sea freight, CY direct: 12 steps</span></h3>
+          <ol class="timeline">
+            <li>
+              <span class="step-no">01</span>
+              <div>
+                <h3><span class="lang-zh">索要单据</span><span class="lang-en">Request documents</span></h3>
+                <p><span class="lang-zh">发货人 · 系统生成合同、发票、装箱单等</span><span class="lang-en">Sender · generated contract, invoice, packing list</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="step-no">02</span>
+              <div>
+                <h3><span class="lang-zh">海运订舱</span><span class="lang-en">Sea booking</span></h3>
+                <p><span class="lang-zh">船公司 · M38 + M2A–M2J（十联单）</span><span class="lang-en">Carrier · M38 + M2A–M2J</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="step-no">03</span>
+              <div>
+                <h3><span class="lang-zh">出口报检</span><span class="lang-en">Export inspection</span></h3>
+                <p><span class="lang-zh">检验检疫 · M07 M19 M21 M04 M17</span><span class="lang-en">Inspection &amp; quarantine · M07 M19 M21 M04 M17</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="step-no">04</span>
+              <div>
+                <h3><span class="lang-zh">申请用箱</span><span class="lang-en">Container application</span></h3>
+                <p><span class="lang-zh">船公司 · M2E</span><span class="lang-en">Carrier · M2E</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="step-no">05</span>
+              <div>
+                <h3><span class="lang-zh">进仓通知</span><span class="lang-en">Warehouse notice</span></h3>
+                <p><span class="lang-zh">发货人 · M13 M10 M11</span><span class="lang-en">Sender · M13 M10 M11</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="step-no">06</span>
+              <div>
+                <h3><span class="lang-zh">出口报关</span><span class="lang-en">Export customs declaration</span></h3>
+                <p><span class="lang-zh">海关 · M07 M19 M21 M20 M05 M2E M2F M2G</span><span class="lang-en">Customs · M07 M19 M21 M20 M05 M2E M2F M2G</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="step-no">07</span>
+              <div>
+                <h3><span class="lang-zh">通知装船</span><span class="lang-en">Load-ship notice</span></h3>
+                <p><span class="lang-zh">堆场 · M2E M2F M2G M2J</span><span class="lang-en">Yard · M2E M2F M2G M2J</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="step-no">08</span>
+              <div>
+                <h3><span class="lang-zh">通知装运</span><span class="lang-en">Shipment notice</span></h3>
+                <p><span class="lang-zh">发货人 · 无单据，须 ETD 当天之后</span><span class="lang-en">Sender · no documents; only after ETD</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="step-no">09</span>
+              <div>
+                <h3><span class="lang-zh">支付运费</span><span class="lang-en">Freight payment</span></h3>
+                <p><span class="lang-zh">船公司 · 无单据</span><span class="lang-en">Carrier · no documents</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="step-no">10</span>
+              <div>
+                <h3><span class="lang-zh">换提单</span><span class="lang-en">Bill of lading exchange</span></h3>
+                <p><span class="lang-zh">船公司 · M2G（生成 M01 海运提单）</span><span class="lang-en">Carrier · M2G (generates M01)</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="step-no">11</span>
+              <div>
+                <h3><span class="lang-zh">费用结算</span><span class="lang-en">Fee settlement</span></h3>
+                <p><span class="lang-zh">发货人 · 无单据（生成 M78 发票）</span><span class="lang-en">Sender · no documents (generates M78)</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="step-no">12</span>
+              <div>
+                <h3><span class="lang-zh">退单</span><span class="lang-en">Document return</span></h3>
+                <p><span class="lang-zh">发货人 · M78 M2A M01</span><span class="lang-en">Sender · M78 M2A M01</span></p>
+              </div>
+            </li>
+          </ol>
+
+          <p class="note">
+            <span class="lang-zh">进口海运 CY 直单为 13 步，新增 7 个表单代码，通过通用 do 命令执行，未硬编码进 step。</span>
+            <span class="lang-en">The import sea-freight CY direct flow has 13 steps and adds 7 form codes, executed through the generic do command rather than being hard-coded into step.</span>
+          </p>
+        </section>
+
+        <section id="results">
+          <h2><span class="lang-zh">结果</span><span class="lang-en">Results</span></h2>
+          <div class="stat-grid">
+            <div class="stat">
+              <b>2</b>
+              <span><span class="lang-zh">单完整跑通至节点 500</span><span class="lang-en">cases completed to node 500</span></span>
+            </div>
+            <div class="stat">
+              <b>12 / 13</b>
+              <span><span class="lang-zh">出口 / 进口流程步数</span><span class="lang-en">export / import steps</span></span>
+            </div>
+            <div class="stat">
+              <b>~30</b>
+              <span><span class="lang-zh">类单据</span><span class="lang-en">document types</span></span>
+            </div>
+            <div class="stat">
+              <b>57 / 37 / 9</b>
+              <span><span class="lang-zh">制单指南 / 步骤指南 / 流程视图</span><span class="lang-en">form guides / step guides / flow views</span></span>
+            </div>
+          </div>
+          <p>
+            <span class="lang-zh">出口与进口各 1 单完整跑通到节点 500。过程中遇到 2 个阻塞问题，经交叉核对单据与操作日志，确认由业务系统自身的源数据矛盾导致；解决方式是定位不一致，而不是反复重试。</span>
+            <span class="lang-en">One export case and one import case were completed to node 500. Two blockers were traced—after cross-checking documents and operation logs—to contradictory source data in the business system itself; the fix was to locate the inconsistency rather than retry blindly.</span>
+          </p>
+          <p>
+            <span class="lang-zh">出口 SOP 覆盖 12 步；进口流程为 13 步（新增 7 个表单代码）；约 30 类单据；知识库包含 57 篇制单指南、37 篇步骤指南、9 条流程视图。</span>
+            <span class="lang-en">The export SOP covers 12 steps; the import flow has 13 steps (with 7 additional form codes); roughly 30 document types; the knowledge base contains 57 form guides, 37 step guides, and 9 flow views.</span>
+          </p>
+        </section>
+
+        <section id="limits">
+          <h2><span class="lang-zh">局限</span><span class="lang-en">Limits</span></h2>
+          <ul class="lang-zh">
+            <li>仅出口海运 CY 直单做了完整的 step 硬编码；进口流程使用通用 do，其他交货方式（DOOR、CFS）与空运、拼单未覆盖。</li>
+            <li>单据创建、填写与检查仍需人工完成。</li>
+            <li>需要手动登录 Edge，登录失效后没有无人值守的重新登录机制。</li>
+            <li>依赖系统日期与 ETD 等业务前置条件。</li>
+            <li>没有自动化测试与依赖锁定；结果输出目录未纳入版本管理。</li>
+          </ul>
+          <ul class="lang-en">
+            <li>Only the export sea-freight CY direct flow is fully hard-coded into step; the import flow uses generic do, and other delivery modes (DOOR, CFS), air freight, and consolidated shipments are not covered.</li>
+            <li>Documents still need to be created, filled, and checked manually.</li>
+            <li>Edge must be logged in manually; there is no unattended re-login mechanism.</li>
+            <li>Depends on business preconditions such as the system date and ETD.</li>
+            <li>No automated tests or dependency lockfile; the output directory is not versioned.</li>
+          </ul>
+        </section>
+
+        <section id="reflection">
+          <h2><span class="lang-zh">反思</span><span class="lang-en">Reflection</span></h2>
+          <p>
+            <span class="lang-zh">校园网同时存在内网与外网通路，因此在这个场景下云端部署比本地部署更合适。</span>
+            <span class="lang-en">The campus network provides both intranet and extranet paths, which made cloud deployment a better fit than local deployment in this case.</span>
+          </p>
+          <p>
+            <span class="lang-zh">这个场景里的信息和操作都明确可查；现实中的流程会更复杂，需要异常处理、权限边界和人工协同。</span>
+            <span class="lang-en">In this scenario every piece of information and every operation is explicit and traceable; real-world workflows are messier and require exception handling, permission boundaries, and human collaboration.</span>
+          </p>
+        </section>
+
+        <section id="files">
+          <h2><span class="lang-zh">文件</span><span class="lang-en">Files</span></h2>
+          <p>
+            <span class="lang-zh">下面是脱敏后的项目文件。README 和 SOP 可在站内阅读，源码文件也可直接查看。</span>
+            <span class="lang-en">The files below are sanitized. README and SOP can be read on this site; source files are also available directly.</span>
+          </p>
+          <ul class="file-list">
+            <li class="file-row">
+              <span class="file-name">README.md</span>
+              <span class="file-desc"><span class="lang-zh">项目说明：背景、方案、成果与局限</span><span class="lang-en">Project overview: context, approach, results, and limits</span></span>
+              <span class="file-links">
+                <a href="files/README.md"><span class="lang-zh">查看</span><span class="lang-en">View</span></a>
+                <a href="#" data-gh-path="project/files/README.md" hidden>GitHub</a>
+              </span>
+            </li>
+            <li class="file-row">
+              <span class="file-name">SOP-出口海运CY直单.md</span>
+              <span class="file-desc"><span class="lang-zh">12 步标准作业流程与成功/失败节点</span><span class="lang-en">12-step SOP with success and failure nodes</span></span>
+              <span class="file-links">
+                <a href="sop.html"><span class="lang-zh">在线阅读</span><span class="lang-en">Read</span></a>
+                <a href="files/SOP-出口海运CY直单.md"><span class="lang-zh">源文件</span><span class="lang-en">Source</span></a>
+                <a href="#" data-gh-path="project/files/SOP-出口海运CY直单.md" hidden>GitHub</a>
+              </span>
+            </li>
+            <li class="file-row">
+              <span class="file-name">simforwarder.py</span>
+              <span class="file-desc"><span class="lang-zh">核心代码：CLI、单据组装、流程编排、日志核验</span><span class="lang-en">Core code: CLI, document assembly, orchestration, log verification</span></span>
+              <span class="file-links">
+                <a href="files/simforwarder.py"><span class="lang-zh">查看</span><span class="lang-en">View</span></a>
+                <a href="#" data-gh-path="project/files/simforwarder.py" hidden>GitHub</a>
+              </span>
+            </li>
+            <li class="file-row">
+              <span class="file-name">case.sample.json</span>
+              <span class="file-desc"><span class="lang-zh">业务参数示例（占位编号）</span><span class="lang-en">Sample business parameters (placeholder ID)</span></span>
+              <span class="file-links">
+                <a href="files/case.sample.json"><span class="lang-zh">查看</span><span class="lang-en">View</span></a>
+                <a href="#" data-gh-path="project/files/case.sample.json" hidden>GitHub</a>
+              </span>
+            </li>
+          </ul>
+          <p class="note">
+            <span class="lang-zh">所有文件为脱敏展示版；已移除账号、单号、金额与本地路径。</span>
+            <span class="lang-en">All files are sanitized for display; account details, case IDs, amounts, and local paths have been removed.</span>
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© 2026 <span class="lang-zh">卢暄可</span><span class="lang-en">Xuanke Lu</span></span>
+      <a href="#" data-repo-link hidden><span class="lang-zh">仓库</span><span class="lang-en">Repository</span></a>
+      <span><span class="lang-zh">最后更新 2026-10</span><span class="lang-en">Last updated 2026-10</span></span>
+    </div>
+  </footer>
+
+  <script src="../app.js" defer></script>
+</body>
+</html>

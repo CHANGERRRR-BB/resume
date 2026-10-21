@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>标准作业流程｜出口海运 CY 直单</title>
+  <meta name="description" content="出口海运 CY 直单 12 步标准作业流程（脱敏展示版）：环境、单据、命令、成功/失败节点与评分注意。">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var query = params.get("lang");
+        var saved = localStorage.getItem("resume.lang");
+        var lang = query === "en" || query === "zh" ? query : saved === "en" ? "en" : "zh";
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
+      } catch (error) {
+        /* keep the default Chinese */
+      }
+    })();
+  </script>
+</head>
+<body
+  data-title-zh="标准作业流程｜出口海运 CY 直单"
+  data-title-en="SOP | Export Sea Freight, CY Direct"
+  data-desc-zh="出口海运 CY 直单 12 步标准作业流程（脱敏展示版）：环境、单据、命令、成功/失败节点与评分注意。"
+  data-desc-en="A sanitized 12-step SOP for export sea freight, CY direct: environment, documents, commands, success/failure nodes, and scoring notes."
+>
+  <a class="skip-link" href="#main"><span class="lang-zh">跳到主要内容</span><span class="lang-en">Skip to content</span></a>
+  <span id="lang-status" class="visually-hidden" aria-live="polite"></span>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html" aria-label="Back to resume">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>DOSSIER <span class="brand-year">/ SOP</span></span>
+      </a>
+      <nav class="site-nav" aria-label="页面导航">
+        <a href="index.html"><span class="lang-zh">项目档案</span><span class="lang-en">Project</span></a>
+        <a href="../index.html#skills"><span class="lang-zh">能力</span><span class="lang-en">Capabilities</span></a>
+        <a href="../index.html#contact"><span class="lang-zh">联系</span><span class="lang-en">Contact</span></a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="语言切换 / Language">
+          <button type="button" data-lang-btn="zh" aria-pressed="true">中</button>
+          <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="print-button" type="button" data-print>
+          <span class="lang-zh">打印 / PDF</span><span class="lang-en">Print / PDF</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero wrap" aria-labelledby="sop-name">
+      <p class="doc-label">
+        <span class="lang-zh">标准作业流程 / SOP</span><span class="lang-en">Standard operating procedure / SOP</span>
+      </p>
+      <h1 id="sop-name"><span class="lang-zh">出口海运 CY 直单</span><span class="lang-en">Export sea freight, CY direct</span></h1>
+      <p class="page-lede">
+        <span class="lang-zh">脱敏展示版：保留 12 步流程、单据代码、成功/失败节点与评分注意；已移除站点地址、委托编号、金额与业务基准数据。</span>
+        <span class="lang-en">Sanitized showcase: the 12-step flow, document codes, success/failure nodes, and scoring notes are retained; the site address, case IDs, amounts, and baseline business data have been removed.</span>
+      </p>
+      <div class="page-meta">
+        <span><span class="lang-zh">适用</span><span class="lang-en">Scope</span><strong><span class="lang-zh">出口海运 · CY 交货</span><span class="lang-en">Export sea freight, CY delivery</span></strong></span>
+        <span><span class="lang-zh">步骤</span><span class="lang-en">Steps</span><strong>12</strong></span>
+        <span><span class="lang-zh">版本</span><span class="lang-en">Version</span><strong>2026-10</strong></span>
+      </div>
+      <a class="back-link" href="index.html"><span class="lang-zh">返回项目档案</span><span class="lang-en">Back to project dossier</span></a>
+    </section>
+
+    <div class="wrap project-layout">
+      <nav class="toc" aria-label="本页目录">
+        <a href="#environment"><span class="lang-zh">环境</span><span class="lang-en">Environment</span></a>
+        <a href="#data"><span class="lang-zh">前置数据</span><span class="lang-en">Preconditions</span></a>
+        <a href="#flow"><span class="lang-zh">流程总表</span><span class="lang-en">Flow</span></a>
+        <a href="#commands"><span class="lang-zh">命令</span><span class="lang-en">Commands</span></a>
+        <a href="#manual"><span class="lang-zh">人工制单</span><span class="lang-en">Manual documents</span></a>
+        <a href="#nodes"><span class="lang-zh">节点</span><span class="lang-en">Nodes</span></a>
+        <a href="#rules"><span class="lang-zh">规则</span><span class="lang-en">Rules</span></a>
+        <a href="#scoring"><span class="lang-zh">评分</span><span class="lang-en">Scoring</span></a>
+      </nav>
+
+      <div class="sop-content">
+        <p class="sop-note">
+          <span class="lang-zh">SOP 正文保留中文，作为原始工作文档；页面标题和导航会随中/EN 切换。宽表格可左右滑动查看。</span>
+          <span class="lang-en">The SOP body stays in Chinese as the original working document; page titles and navigation switch between Chinese and English. Wide tables scroll horizontally.</span>
+        </p>
+
+        <h2 id="environment"><span class="lang-zh">一、环境要求与启动</span><span class="lang-en">1. Environment and startup</span></h2>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th><span class="lang-zh">项目</span><span class="lang-en">Item</span></th><th><span class="lang-zh">要求</span><span class="lang-en">Requirement</span></th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="lang-zh">站点</span><span class="lang-en">Site</span></td><td><code>http://&lt;training-host&gt;/simforwarder/</code></td></tr>
+              <tr><td><span class="lang-zh">浏览器</span><span class="lang-en">Browser</span></td><td>Edge，持久化配置目录 <code>&lt;project-root&gt;/.browser-profile</code></td></tr>
+              <tr><td><span class="lang-zh">调试端口</span><span class="lang-en">Debug port</span></td><td>9222（Playwright 通过 CDP 接管）</td></tr>
+              <tr><td>Python</td><td>已安装 playwright（<code>pip show playwright</code> 可查）</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>启动 Edge（保持窗口打开）：</p>
+        <pre><code>"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --remote-debugging-port=9222 --user-data-dir="&lt;project-root&gt;/.browser-profile"</code></pre>
+        <p>若页面跳到 <code>Login.aspx</code>，在 Edge 中手动登录一次，然后停在 <code>Student/Home.aspx</code>。</p>
+        <p>自检：</p>
+        <pre><code>python simforwarder.py check</code></pre>
+
+        <h2 id="data"><span class="lang-zh">二、业务开始前要记录的数据</span><span class="lang-en">2. Data to record before starting</span></h2>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th><span class="lang-zh">数据</span><span class="lang-en">Data</span></th><th><span class="lang-zh">说明</span><span class="lang-en">Note</span></th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="lang-zh">委托编号</span><span class="lang-en">Case ID</span></td><td>如 <code>&lt;case-id&gt;</code>，填入 <code>case.json</code></td></tr>
+              <tr><td><span class="lang-zh">装期（ETD）</span><span class="lang-en">ETD</span></td><td><strong>通知装运必须等到这一天</strong></td></tr>
+              <tr><td><span class="lang-zh">最迟装运日</span><span class="lang-en">Latest shipment date</span></td><td>不得超过</td></tr>
+              <tr><td><span class="lang-zh">船名/航次、箱号/箱型</span><span class="lang-en">Vessel/voyage, container</span></td><td>订舱后取得</td></tr>
+              <tr><td><span class="lang-zh">货物、件数、重量、体积、货值</span><span class="lang-en">Cargo, packages, weight, volume, value</span></td><td>制单用</td></tr>
+              <tr><td><span class="lang-zh">报价与成本</span><span class="lang-en">Quote and cost</span></td><td>报价 = 成本 + 利润，按业务实际填写</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><code>case.json</code> 示例（每次只改 <code>commissionId</code>）：</p>
+        <pre><code>{ "commissionId": "&lt;case-id&gt;", "companyRoleType": 1 }</code></pre>
+
+        <h2 id="flow"><span class="lang-zh">三、标准流程总表</span><span class="lang-en">3. Standard flow</span></h2>
+        <p>机构 ID：1 船公司、3 检验检疫、5 发货人、7 集装箱堆场、9 海关。“成功节点”是流程推进后的场景号，返回其他节点按“失败处理”章节排查。</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th><span class="lang-zh">步骤</span><span class="lang-en">Step</span></th>
+                <th><span class="lang-zh">机构</span><span class="lang-en">Institution</span></th>
+                <th>commandId</th>
+                <th><span class="lang-zh">提交单据</span><span class="lang-en">Documents</span></th>
+                <th><span class="lang-zh">成功节点</span><span class="lang-en">Success node</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>索要单据</td><td>5 发货人</td><td>501</td><td>无</td><td>100</td></tr>
+              <tr><td>2</td><td>海运订舱</td><td>1 船公司</td><td>101</td><td>M38 + M2A～M2J（十联单）</td><td>100</td></tr>
+              <tr><td>3</td><td>出口报检</td><td>3 检验检疫</td><td>301</td><td>M07 M19 M21 M04 M17（信用证如有）</td><td>100</td></tr>
+              <tr><td>4</td><td>申请用箱</td><td>1 船公司</td><td>103</td><td>M2E（10-5）</td><td>200</td></tr>
+              <tr><td>5</td><td>进仓通知</td><td>5 发货人</td><td>502</td><td>M13 M10 M11</td><td>200</td></tr>
+              <tr><td>6</td><td>出口报关</td><td>9 海关</td><td>901</td><td>M07 M19 M21 M20 M05 M2E M2F M2G</td><td>100</td></tr>
+              <tr><td>7</td><td>通知装船</td><td>7 堆场</td><td>702</td><td>M2E M2F M2G M2J</td><td>200</td></tr>
+              <tr><td>8</td><td>通知装运</td><td>5 发货人</td><td>503</td><td>无（<strong>须 ETD 当天之后</strong>）</td><td>300</td></tr>
+              <tr><td>9</td><td>支付运费</td><td>1 船公司</td><td>104</td><td>无</td><td>300</td></tr>
+              <tr><td>10</td><td>换提单</td><td>1 船公司</td><td>105</td><td>M2G（成功生成 M01 海运提单）</td><td>400</td></tr>
+              <tr><td>11</td><td>费用结算</td><td>5 发货人</td><td>504</td><td>无（成功生成 M78 发票）</td><td>400</td></tr>
+              <tr><td>12</td><td>退单</td><td>5 发货人</td><td>505</td><td>M78 M2A M01（检验证书如有）</td><td>500</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="commands"><span class="lang-zh">四、命令执行</span><span class="lang-en">4. Commands</span></h2>
+        <p>所有命令在本目录（<code>project/files</code>，即 <code>simforwarder.py</code> 与 <code>case.json</code> 所在目录）下运行：</p>
+        <pre><code>REM 查看当前委托的所有单据及 InternalId
+python simforwarder.py docs
+
+REM 查看 12 个标准步骤的完成情况
+python simforwarder.py status
+
+REM 按顺序执行业务步骤（单据由程序自动按类型组装）
+python simforwarder.py step get-docs
+python simforwarder.py step booking
+python simforwarder.py step inspection
+python simforwarder.py step apply-container
+python simforwarder.py step warehouse-notice
+python simforwarder.py step customs
+python simforwarder.py step load-ship
+python simforwarder.py step notify-shipment
+python simforwarder.py step pay-freight
+python simforwarder.py step get-bl
+python simforwarder.py step settle
+python simforwarder.py step return-docs
+
+REM 查看操作日志（确认已完成步骤）
+python simforwarder.py log --pages 2</code></pre>
+        <p>其他辅助命令：</p>
+        <pre><code>REM 查看某机构可办理的业务及 commandId
+python simforwarder.py scenes 5
+python simforwarder.py scenes 1 --all
+
+REM 临时调用任意操作（单据可手写 docList）
+python simforwarder.py do 5 503
+python simforwarder.py do 1 105 --doc-types M2G</code></pre>
+        <p><strong>执行前检查：</strong></p>
+        <ul>
+          <li><code>step</code> 会先查操作日志（最近 7 天、3 页），已完成步骤自动跳过；确需重做时加 <code>--force</code>。若业务跨期较长，先用 <code>log --pages 5</code> 确认。</li>
+          <li><code>step</code> 会先列出将要提交的单据。若提示“缺少单据类型”，按提示先在“单据管理”中生成并填写对应单据，再重新执行。</li>
+          <li>不确定进度时，先运行 <code>python simforwarder.py log --pages 2</code>。</li>
+        </ul>
+
+        <h2 id="manual"><span class="lang-zh">五、需要人工制单的前置步骤</span><span class="lang-en">5. Manual document prerequisites</span></h2>
+        <p>程序只负责“机构操作”（提交单据、推进流程），以下单据必须先做好：</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th><span class="lang-zh">时机</span><span class="lang-en">When</span></th><th><span class="lang-zh">人工操作</span><span class="lang-en">Manual action</span></th></tr>
+            </thead>
+            <tbody>
+              <tr><td>订舱前</td><td>单据管理 → 新增 <strong>(10-1) 集装箱货物托运单</strong>，填写并检查；保存后系统自动生成其余九联（M2B～M2J）。同时生成/填写 M38 集装箱预配清单。</td></tr>
+              <tr><td>报检前</td><td>新增 <strong>M17 出境货物检验检疫申请</strong>，填写并检查；M04 代理报检委托书由发货人提供。</td></tr>
+              <tr><td>报关前</td><td>打开“国际贸易单一窗口”，创建 <strong>M05 出口货物报关单</strong>，填写 → 上载 → 申报 → 打印。打印按钮为 <code>#sp_daying</code>；打印前 <code>CustomEntry.GetRecord</code> 的 <code>N0172</code> 必须为 4。</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>其余单据由系统自动生成：</p>
+        <ul>
+          <li>索要单据 → M07 合同、M19 商业发票、M21 装箱单、M20 代理报关委托书、M04 代理报检委托书</li>
+          <li>订舱 → M38、M2A～M2J、M16 订舱确认书</li>
+          <li>用箱 → M10/M11 设备交接单</li>
+          <li>进仓通知 → M13 进仓通知单</li>
+          <li>换提单 → M01 海运提单</li>
+          <li>费用结算 → M78 国际货物代理运输专业发票</li>
+        </ul>
+
+        <h2 id="nodes"><span class="lang-zh">六、成功/失败节点速查</span><span class="lang-en">6. Success and failure nodes</span></h2>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th><span class="lang-zh">步骤</span><span class="lang-en">Step</span></th><th><span class="lang-zh">成功</span><span class="lang-en">Success</span></th><th><span class="lang-zh">常见失败节点与含义</span><span class="lang-en">Common failure nodes</span></th></tr>
+            </thead>
+            <tbody>
+              <tr><td>索要单据</td><td>100</td><td>101 单据问题；102 业务类型不符</td></tr>
+              <tr><td>订舱</td><td>100</td><td>101 单据有误；102 重试；103 资料不全</td></tr>
+              <tr><td>出口报检</td><td>100</td><td>101 单据有误；102 重试；103 资料不全</td></tr>
+              <tr><td>申请用箱</td><td>200</td><td>201 单据拿错；202 资金/资料问题</td></tr>
+              <tr><td>进仓通知</td><td>200</td><td>202 单据需修改</td></tr>
+              <tr><td>出口报关</td><td>100</td><td>101 单据有误；102 待确认；110 未报检</td></tr>
+              <tr><td>通知装船</td><td>200</td><td>202 未报关；205 已开船（只能改船期）</td></tr>
+              <tr><td>通知装运</td><td>300</td><td><strong>301 货物尚未装运（未到 ETD）</strong>；303 已经通知过</td></tr>
+              <tr><td>支付运费</td><td>300</td><td>301 业务不符；304 未装运</td></tr>
+              <tr><td>换提单</td><td>400</td><td>401 单据拿错；403 未付运费；406 未装船</td></tr>
+              <tr><td>费用结算</td><td>400</td><td>401 单据拿错；404 未出运</td></tr>
+              <tr><td>退单</td><td>500</td><td>501 单据拿错；502 未先结算</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>特殊返回：</strong></p>
+        <ul>
+          <li><code>Code 9001 系统异常</code> → 检查请求中的 <code>InstitutionId</code> / <code>CommissionId</code> 是否为明确值（本程序已固定传明确值）。</li>
+          <li><code>重复费用结算</code> / <code>重复退单</code> 等 → 该业务步骤已经完成，不要再次操作；会新增一次“操作失败”。</li>
+          <li>页面残留弹窗挡住操作 → 关闭 <code>DocumentCenter.aspx</code> 弹窗后重试。</li>
+        </ul>
+
+        <h2 id="rules"><span class="lang-zh">七、关键规则与单据状态变化</span><span class="lang-en">7. Key rules and document state changes</span></h2>
+        <ol>
+          <li><strong>通知装运的时间限制</strong>：必须等系统日期 ≥ ETD。提前操作会记一次“操作失败”，影响业务能力评分。</li>
+          <li><strong>不要用“申请修改船期”绕过日期</strong>：会产生费用，且属于错误业务操作。</li>
+          <li><strong>通知装船后</strong>：M2E（10-5）、M2F（10-6）被堆场收走，单据列表中消失，属正常。</li>
+          <li><strong>换提单后</strong>：M2G（10-7）被船公司收走，生成 M01 海运提单。</li>
+          <li><strong>退单后</strong>：M2A、M01 被发货人收走；M78 保留在货代单据列表中。</li>
+          <li><strong>滞箱费</strong>：集装箱使用超过 7 天，支付运费时会产生滞箱费；CY 自拉自送没有拖车费。</li>
+          <li><strong>拼单不适用本 SOP</strong>：拼单需要主单/分单分别处理十联单，另见专门流程。</li>
+        </ol>
+
+        <h2 id="scoring"><span class="lang-zh">八、评分注意事项</span><span class="lang-en">8. Scoring notes</span></h2>
+        <p>系统按 <strong>使用情况、报价能力、盈利能力、制单能力、业务能力</strong> 评分，学生端只显示公司总分，不显示明细。</p>
+        <p>从本次业务总结出的可避免失分点：</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th><span class="lang-zh">失分点</span><span class="lang-en">Risk</span></th><th><span class="lang-zh">如何避免</span><span class="lang-en">How to avoid</span></th></tr>
+            </thead>
+            <tbody>
+              <tr><td>报检时“单据填写有误”</td><td>提交前用单据检查功能逐张检查，尤其 M17、M04</td></tr>
+              <tr><td>未到船期就点“通知装运”</td><td>等 ETD 当天再执行 <code>step notify-shipment</code></td></tr>
+              <tr><td>业务完成后重复结算/退单</td><td>用 <code>step</code>（自动查日志跳过）或先看 <code>log</code>；不要手动重复点击</td></tr>
+              <tr><td>托运单/报关委托书检查有警告</td><td>填写后查看警告项（如 M2A30/M2A33/M2A37）并修正</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>另外：</p>
+        <ul>
+          <li>报价成功率按“成功/失败”计，按实际成功/失败次数统计。</li>
+          <li>利润 = 收入 − 支出；报价前先做成本预算，按业务实际填写。</li>
+          <li>全部完成后，在“我的公司 → 公司成员”把公司可分配分数分配给成员。</li>
+        </ul>
+
+        <p class="sop-note">
+          <span class="lang-zh">展示版说明：已移除站点地址、委托编号、金额与业务基准数据；请勿将本流程用于未经授权的系统。</span>
+          <span class="lang-en">Showcase note: the site address, case IDs, amounts, and baseline business data have been removed. Do not use this procedure against systems you are not authorized to access.</span>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© 2026 <span class="lang-zh">卢暄可</span><span class="lang-en">Xuanke Lu</span></span>
+      <a href="files/SOP-出口海运CY直单.md"><span class="lang-zh">下载 Markdown</span><span class="lang-en">Download Markdown</span></a>
+      <span><span class="lang-zh">最后更新 2026-10</span><span class="lang-en">Last updated 2026-10</span></span>
+    </div>
+  </footer>
+
+  <script src="../app.js" defer></script>
+</body>
+</html>

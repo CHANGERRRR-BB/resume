@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="flowTitle flowDesc">
+  <title id="flowTitle">货运代理流程自动化示意图</title>
+  <desc id="flowDesc">单据从单据中心进入组装与校验，由自动化程序跨机构提交操作，最后通过操作日志核验并跳过已完成步骤。人工负责创建和填写单据。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2046A8"/>
+    </marker>
+    <marker id="arrowMuted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5B6670"/>
+    </marker>
+  </defs>
+
+  <g font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif">
+    <text x="64" y="54" fill="#5B6670" font-size="12" letter-spacing="2" font-family="Consolas, monospace">WORKFLOW MAP / 流程示意图</text>
+    <text x="64" y="92" fill="#15191D" font-size="26" font-weight="600">单据 → 结构化 → 执行 → 核验</text>
+    <text x="64" y="118" fill="#5B6670" font-size="14">Documents → Structure → Execute → Verify</text>
+
+    <g transform="translate(1000,42)">
+      <rect x="0" y="0" width="136" height="52" fill="none" stroke="#E9552B" stroke-width="1.5"/>
+      <text x="68" y="22" text-anchor="middle" fill="#B23A17" font-size="11" letter-spacing="1.5" font-family="Consolas, monospace">2 CASES</text>
+      <text x="68" y="40" text-anchor="middle" fill="#5B6670" font-size="11" font-family="Consolas, monospace">NODE 500</text>
+    </g>
+
+    <!-- Stage 1 -->
+    <g>
+      <rect x="64" y="170" width="220" height="160" fill="#F7F8F4" stroke="#C9CEC4"/>
+      <rect x="64" y="170" width="220" height="3" fill="#2046A8"/>
+      <text x="80" y="198" fill="#2046A8" font-size="11" letter-spacing="1.5" font-family="Consolas, monospace">01</text>
+      <text x="80" y="222" fill="#15191D" font-size="17" font-weight="600">单据中心</text>
+      <text x="80" y="240" fill="#5B6670" font-size="11" font-family="Consolas, monospace">DOCUMENT CENTER</text>
+      <text x="80" y="268" fill="#15191D" font-size="12.5">M07 · M19 · M21 · M38</text>
+      <text x="80" y="288" fill="#15191D" font-size="12.5">M2A–M2J · M04 · M17</text>
+      <text x="80" y="310" fill="#5B6670" font-size="12">按 TypeName + InternalId 索引</text>
+    </g>
+
+    <line x1="284" y1="250" x2="336" y2="250" stroke="#2046A8" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Stage 2 -->
+    <g>
+      <rect x="340" y="170" width="220" height="160" fill="#F7F8F4" stroke="#C9CEC4"/>
+      <rect x="340" y="170" width="220" height="3" fill="#2046A8"/>
+      <text x="356" y="198" fill="#2046A8" font-size="11" letter-spacing="1.5" font-family="Consolas, monospace">02</text>
+      <text x="356" y="222" fill="#15191D" font-size="17" font-weight="600">组装与校验</text>
+      <text x="356" y="240" fill="#5B6670" font-size="11" font-family="Consolas, monospace">ASSEMBLE</text>
+      <text x="356" y="268" fill="#15191D" font-size="12.5">按类型取单据，生成 docList</text>
+      <text x="356" y="288" fill="#15191D" font-size="12.5">缺单据 → 明确提示，不盲试</text>
+      <text x="356" y="310" fill="#5B6670" font-size="12">dry-run 预览提交内容</text>
+    </g>
+
+    <line x1="560" y1="250" x2="612" y2="250" stroke="#2046A8" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Stage 3 -->
+    <g>
+      <rect x="616" y="170" width="300" height="160" fill="#F7F8F4" stroke="#C9CEC4"/>
+      <rect x="616" y="170" width="300" height="3" fill="#2046A8"/>
+      <text x="632" y="198" fill="#2046A8" font-size="11" letter-spacing="1.5" font-family="Consolas, monospace">03</text>
+      <text x="632" y="222" fill="#15191D" font-size="17" font-weight="600">跨机构操作</text>
+      <text x="632" y="240" fill="#5B6670" font-size="11" font-family="Consolas, monospace">EXECUTE</text>
+      <text x="632" y="266" fill="#15191D" font-size="12.5">发货人 <tspan fill="#5B6670" font-family="Consolas, monospace">1 · 5 · 8 · 11 · 12</tspan></text>
+      <text x="632" y="284" fill="#15191D" font-size="12.5">船公司 <tspan fill="#5B6670" font-family="Consolas, monospace">2 · 4 · 9 · 10</tspan></text>
+      <text x="632" y="302" fill="#15191D" font-size="12.5">检验检疫 <tspan fill="#5B6670" font-family="Consolas, monospace">3</tspan>　海关 <tspan fill="#5B6670" font-family="Consolas, monospace">6</tspan>　堆场 <tspan fill="#5B6670" font-family="Consolas, monospace">7</tspan></text>
+      <text x="632" y="320" fill="#5B6670" font-size="12">按 SOP 顺序推进 12 个步骤</text>
+    </g>
+
+    <line x1="916" y1="250" x2="936" y2="250" stroke="#2046A8" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Stage 4 -->
+    <g>
+      <rect x="940" y="170" width="196" height="160" fill="#F7F8F4" stroke="#C9CEC4"/>
+      <rect x="940" y="170" width="196" height="3" fill="#2046A8"/>
+      <text x="956" y="198" fill="#2046A8" font-size="11" letter-spacing="1.5" font-family="Consolas, monospace">04</text>
+      <text x="956" y="222" fill="#15191D" font-size="17" font-weight="600">日志核验</text>
+      <text x="956" y="240" fill="#5B6670" font-size="11" font-family="Consolas, monospace">VERIFY</text>
+      <text x="956" y="268" fill="#15191D" font-size="12.5">读取操作日志</text>
+      <text x="956" y="288" fill="#15191D" font-size="12.5">已完成 → 自动跳过</text>
+      <circle cx="962" cy="310" r="4" fill="#E9552B"/>
+      <text x="974" y="314" fill="#15191D" font-size="12">结果可复查</text>
+    </g>
+
+    <!-- Loop back -->
+    <path d="M1038 330 V400 H766 V334" fill="none" stroke="#5B6670" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arrowMuted)"/>
+    <text x="902" y="420" text-anchor="middle" fill="#5B6670" font-size="12">已完成 → 跳过 / skip completed</text>
+
+    <!-- Boundary -->
+    <line x1="64" y1="458" x2="1136" y2="458" stroke="#C9CEC4" stroke-width="1" stroke-dasharray="2 5"/>
+    <text x="64" y="450" fill="#5B6670" font-size="10" letter-spacing="1.5" font-family="Consolas, monospace">HUMAN / AUTOMATION BOUNDARY</text>
+
+    <!-- Lanes -->
+    <g>
+      <rect x="64" y="474" width="500" height="72" fill="#E8ECE4"/>
+      <text x="84" y="500" fill="#15191D" font-size="11" letter-spacing="1.5" font-family="Consolas, monospace">人工 / HUMAN</text>
+      <text x="84" y="524" fill="#5B6670" font-size="13">创建、填写并检查单据；登录；异常处理</text>
+    </g>
+    <g>
+      <rect x="600" y="474" width="536" height="72" fill="#E8EDF7"/>
+      <text x="620" y="500" fill="#2046A8" font-size="11" letter-spacing="1.5" font-family="Consolas, monospace">自动化 / AUTOMATION</text>
+      <text x="620" y="524" fill="#5B6670" font-size="13">组装 docList；提交机构操作；读取日志；跳过已完成</text>
+    </g>
+
+    <text x="64" y="600" fill="#5B6670" font-size="11">运行时：Python + Playwright / CDP，无 LLM / OCR　·　开发工具：Claude Code + Playwright MCP</text>
+  </g>
+</svg>
